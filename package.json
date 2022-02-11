@@ -1,0 +1,83 @@
+{
+  "name": "ssss",
+  "private": true,
+  "scripts": {
+		"install": "lerna bootstrap",
+    "all:fe:dev": "lerna run fe:dev",
+    "all:fe:build": "lerna run fe:build",
+    "all:server:dev": "lerna run server:dev",
+    "all:server": "lerna run server",
+    "app1:fe:dev": "lerna run fe:dev --scope=app1",
+    "app1:fe:build": "lerna run fe:build --scope=app1",
+    "app1:server:dev": "lerna run server:dev --scope=app1",
+    "app1:server": "lerna run server --scope=app1",
+    "main:fe:dev": "lerna run fe:dev --scope=main",
+    "main:fe:build": "lerna run fe:build --scope=main",
+    "main:server:dev": "lerna run server:dev --scope=main",
+    "main:server": "lerna run server --scope=main",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,css,sass,less,md,json}\"",
+    "eslint": "eslint --fix \"**/*.{js,jsx,tsx,md,json}\"",
+    "stylelint": "npx stylelint --fix \"**/*.{css,scss,less}\"",
+    "dumi:dev": "node generateDocs && dumi dev",
+    "dumi:build": "node generateDocs && dumi build",
+    "build:aeps-rc": "lerna run build --scope=aeps-rc",
+    "publish": "lerna publish",
+    "commit": "git-cz"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,tsx,css,sass,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.4",
+    "cz-lerna-changelog": "^2.0.3",
+    "dumi": "^1.0.13",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-json": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-markdown": "^2.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-redux": "^3.3.2",
+    "father-build": "^1.20.1",
+    "husky": "^7.0.2",
+    "lerna": "^4.0.0",
+    "lint-staged": "^10.0.7",
+    "postcss": "^8.3.9",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recess-order": "^2.5.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0",
+    "yamljs": "^0.3.0",
+    "yorkie": "^2.0.0"
+  }
+}

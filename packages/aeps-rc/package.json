@@ -1,0 +1,54 @@
+{
+	"name": "aeps-rc",
+	"version": "0.1.5",
+	"description": "> TODO: description",
+	"author": "jim <798165604@qq.com>",
+	"homepage": "https://github.com/jimwong666/ssss#readme",
+	"license": "MIT",
+	"main": "lib/index.js",
+	"module": "es/index.js",
+	"directories": {
+		"dist": "dist",
+		"lib": "lib",
+		"es": "es"
+	},
+	"files": [
+		"dist",
+		"lib",
+		"es"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jimwong666/ssss.git"
+	},
+	"scripts": {
+		"test": "echo \"Error: run tests from root\" && exit 1",
+		"build": "father-build"
+	},
+	"browserslist": [
+		"> 0.5%",
+		"last 2 versions",
+		"Firefox ESR",
+		"not dead",
+		"IE 11",
+		"not IE 10"
+	],
+	"bugs": {
+		"url": "https://github.com/jimwong666/ssss/issues"
+	},
+	"bundleDependencies": false,
+	"peerDependencies": {
+		"react": "^16.13.1",
+		"react-router-dom": "^5.2.0"
+	},
+	"dependencies": {
+		"antd": "^4.4.2"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"directory": "src"
+	},
+	"sideEffects": false,
+	"typings": "lib/index.d.ts",
+	"unpkg": "dist/index.min.js"
+}

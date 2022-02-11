@@ -1,0 +1,21 @@
+**/*.svg
+**/*.ejs
+**/*.html
+package.json
+.umi
+.umi-production
+.vscode
+
+**/*.min.js
+**/node_modules/**/*
+**/dist/**/*
+**/log/**/*
+
+docs/**/*
+
+# aeps-rc
+**/aeps-rc/lib/**/*
+**/aeps-rc/es/**/*
+
+# compiled files
+**/public/style

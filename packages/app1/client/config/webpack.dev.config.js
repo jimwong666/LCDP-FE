@@ -42,8 +42,43 @@ module.exports = merge(webpackBaseConfig, {
 	module: {
 		rules: [
 			{
+				test: /\.scss$/,
+				include: [clientPathResolve('src')],
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'style-loader',
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								localIdentName: `${appConfig.appName}__[local]--[hash:base64:5]`,
+							},
+							importLoaders: 2, // 使用import之前还要经过几次loader
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							sourceMap: true,
+							config: {
+								path: path.resolve(__dirname, './postcss.config.js'), // 使用postcss单独的配置文件
+							},
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+			{
 				test: /\.(less|css)$/,
-				include: [clientPathResolve('src'), clientPathResolve('../../aeps-rc'), /node_modules/],
+				include: [clientPathResolve('../../aeps-rc'), /node_modules/],
 				use: [
 					{
 						loader: 'style-loader',

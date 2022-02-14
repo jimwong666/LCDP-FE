@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import classNames from 'classnames/bind';
 import { withRouter } from 'react-router-dom';
-import styles from '../styles/index.less';
+import styles from '../styles/index.scss';
 import { fetchTestAction } from '../actions';
 
 const cx = classNames.bind(styles);

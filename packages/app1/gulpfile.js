@@ -1,17 +1,22 @@
 const gulp = require('gulp');
-const less = require('gulp-less');
+const sass = require('gulp-sass');
 const clean = require('gulp-clean');
+
+sass.compiler = require('node-sass');
 
 gulp.task('clean', function () {
 	return gulp.src('./public/style', { read: false }).pipe(clean());
 });
 
-gulp.task('less', function () {
-	return gulp.src('./less/**/*.less').pipe(less()).pipe(gulp.dest('./public/style'));
+gulp.task('sass', function () {
+	return gulp
+		.src('./sass/**/*.scss')
+		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+		.pipe(gulp.dest('./public/style'));
 });
 
 gulp.task('watch', function () {
-	gulp.watch('./less/**/*.less', gulp.series('less'));
+	gulp.watch('./sass/**/*.scss', gulp.series('sass'));
 });
 
-gulp.task('default', gulp.series('clean', 'less', 'watch'));
+gulp.task('default', gulp.series('clean', 'sass', 'watch'));

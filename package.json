@@ -15,9 +15,9 @@
     "main:fe:build": "lerna run fe:build --scope=main",
     "main:server:dev": "lerna run server:dev --scope=main",
     "main:server": "lerna run server --scope=main",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,css,less,md,json}\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,css,sass,less,md,json}\"",
     "eslint": "eslint --fix \"**/*.{js,jsx,tsx,md,json}\"",
-    "stylelint": "npx stylelint --fix \"**/*.{css,less}\"",
+    "stylelint": "npx stylelint --fix \"**/*.{css,scss,less}\"",
     "dumi:dev": "node generateDocs && dumi dev",
     "dumi:build": "node generateDocs && dumi build",
     "build:aeps-rc": "lerna run build --scope=aeps-rc",
@@ -41,7 +41,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,tsx,css,less,md,json}": [
+    "*.{js,jsx,tsx,css,sass,less,md,json}": [
       "prettier --write"
     ],
     "*.ts?(x)": [
@@ -76,6 +76,7 @@
     "stylelint-config-recess-order": "^2.5.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0",
     "yamljs": "^0.3.0",
     "yorkie": "^2.0.0"
   }

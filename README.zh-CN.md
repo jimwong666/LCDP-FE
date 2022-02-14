@@ -52,7 +52,7 @@ $ npm run all:server:dev // 启动所有node应用（生产环境）
 ````
 $ npm run prettier // 格式化所以代码
 $ npm run eslint // 代码语法等校验（js,jsx,tsx,md,json）
-$ npm run stylelint // 样式代码语法等校验（css,scss,less）
+$ npm run stylelint // 样式代码语法等校验（css,less）
 $ npm run dumi:dev // 预览文档（开发环境）
 $ npm run dumi:build // 打包文档（生产环境）
 $ npm run build:aeps-rc // 打包aeps-rc组件

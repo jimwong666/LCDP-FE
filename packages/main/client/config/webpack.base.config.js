@@ -21,7 +21,7 @@ module.exports = {
 	},
 	resolve: {
 		modules: [clientPathResolve('src'), clientPathResolve('../node_modules'), 'node_modules'],
-		extensions: ['.js', '.jsx', '.scss', '.json'],
+		extensions: ['.js', '.jsx', '.json'],
 		alias: {
 			'@': clientPathResolve('src'),
 			'@components': clientPathResolve('src/components'),

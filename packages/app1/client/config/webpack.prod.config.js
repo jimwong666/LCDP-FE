@@ -28,39 +28,6 @@ module.exports = merge(webpackBaseConfig, {
 	module: {
 		rules: [
 			{
-				test: /\.scss$/,
-				include: [clientPathResolve('src')],
-				exclude: /node_modules/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '../', // css中引入背景图片会在图片url前面加上该路径
-						},
-					},
-					{
-						loader: 'css-loader',
-						options: {
-							importLoaders: 2, // 使用import之前还要经过几次loader
-							modules: {
-								localIdentName: `${appConfig.appName}__[local]--[hash:base64:5]`,
-							},
-						},
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							config: {
-								path: path.resolve(__dirname, './postcss.config.js'), // 使用postcss单独的配置文件
-							},
-						},
-					},
-					{
-						loader: 'sass-loader',
-					},
-				],
-			},
-			{
 				test: /\.(less|css)$/,
 				include: /node_modules/,
 				use: [

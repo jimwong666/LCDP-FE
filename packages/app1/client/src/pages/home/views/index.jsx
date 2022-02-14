@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import classNames from 'classnames/bind';
-import styles from '../styles/index.scss';
+import styles from '../styles/index.less';
 import { fetchTestAction } from '../actions';
 
 const cx = classNames.bind(styles);

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { asyncFetchPreDataAction, asyncFetchPreDataAction2 } from '../actions';
 // import classNames from 'classnames/bind';
-// import styles from '../styles/index.scss';
+// import styles from '../styles/index.less';
 // const cx = classNames.bind(styles);
 
 const mapStateToProps = (state) => ({

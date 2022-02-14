@@ -3,8 +3,6 @@
 # dependencies
 /node_modules
 /packages/*/node_modules/
-/package-lock.json
-/yarn.lock
 
 # log
 /npm-debug.log*
@@ -28,10 +26,10 @@
 /.vscode
 /.idea
 
-# aeps-rc
-/packages/aeps-rc/dist/
-/packages/aeps-rc/es/
-/packages/aeps-rc/lib/
+#  npm package
+/packages/*/dist/
+/packages/*/es/
+/packages/*/lib/
 
 # docs
 /docs-sources

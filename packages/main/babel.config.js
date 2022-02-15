@@ -18,6 +18,7 @@ module.exports = function (api) {
 						version: 3,
 						proposals: true,
 					},
+					useESModules: true,
 				},
 			],
 			// 支持高阶组件装饰器

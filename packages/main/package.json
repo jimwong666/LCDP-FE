@@ -15,7 +15,12 @@
 		"fe:build": "cross-env NODE_ENV=production webpack --config ./client/config/webpack.config.js --mode=production",
 		"server:dev": "cross-env NODE_ENV=development node ./bin/www",
 		"server": "cross-env NODE_ENV=production node ./bin/www",
-		"pm2": "pm2 start ./ecosystem.config.js && pm2 monit"
+		"pm2start:dev": "cross-env NODE_ENV=development pm2 start ./ecosystem.config.js",
+		"pm2start": "pm2 start ./ecosystem.config.js",
+		"pm2restart": "pm2 restart all",
+		"pm2monit": "pm2 monit",
+		"pm2stop": "pm2 stop all",
+		"pm2delete": "pm2 delete all"
 	},
 	"bugs": {
 		"url": "https://github.com/jimwong666/ssss/issues"
@@ -57,7 +62,7 @@
 		"less": "^3.9.0",
 		"less-loader": "^5.0.0",
 		"mini-css-extract-plugin": "^0.11.1",
-		"node-sass": "4.14.1",
+		"node-sass": "^5.0.0",
 		"optimize-css-assets-webpack-plugin": "^5.0.4",
 		"postcss": "^8.3.9",
 		"postcss-loader": "^3.0.0",

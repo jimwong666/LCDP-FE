@@ -3,10 +3,16 @@ import { HomeOutlined, ReconciliationOutlined, HddOutlined } from '@ant-design/i
 
 const menuData = [
 	{
-		menuKey: '1',
+		menuKey: '/',
 		path: '/',
 		icon: <HomeOutlined />,
 		text: '首页',
+	},
+	{
+		menuKey: '/work',
+		path: '/work',
+		icon: <HomeOutlined />,
+		text: '工作',
 	},
 	{
 		subMenuKey: 'base',
@@ -14,25 +20,25 @@ const menuData = [
 		text: '基础资料',
 		subMenuGroup: [
 			{
-				menuKey: '2',
+				menuKey: '/app1/goods/add',
 				path: '/app1/goods/add',
 				icon: null,
 				text: '新增物品',
 			},
 			{
-				menuKey: '3',
+				menuKey: '/app1/goods/list',
 				path: '/app1/goods/list',
 				icon: null,
 				text: '物品列表',
 			},
 			{
-				menuKey: '4',
+				menuKey: '/app1/supplier/add',
 				path: '/app1/supplier/add',
 				icon: null,
 				text: '新增供应商',
 			},
 			{
-				menuKey: '5',
+				menuKey: '/app1/supplier/list',
 				path: '/app1/supplier/list',
 				icon: null,
 				text: '供应商列表',
@@ -45,13 +51,13 @@ const menuData = [
 		text: '项目管理',
 		subMenuGroup: [
 			{
-				menuKey: '6',
+				menuKey: '/app2/pm/add',
 				path: '/app2/pm/add',
 				icon: null,
 				text: '新增项目',
 			},
 			{
-				menuKey: '7',
+				menuKey: '/app2/pm/list',
 				path: '/app2/pm/list',
 				icon: null,
 				text: '项目列表',

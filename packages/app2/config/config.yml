@@ -22,8 +22,8 @@ dev_clientPort: 4002
 dev_publicPath: ""
 dev_apiPath: "https://focusapi.vemic.com/mock/209"
 # server
-dev_domainUrl: "http://app2.scm.dev.com"
-dev_mainAppDomainUrl: "http://scm.dev.com"
+dev_domainUrl: "http://app2.paludina.dev.com"
+dev_mainAppDomainUrl: "http://paludina.dev.com"
 dev_backendUrl: "https://focusapi.vemic.com/mock/209"
 
 # prod
@@ -31,8 +31,8 @@ dev_backendUrl: "https://focusapi.vemic.com/mock/209"
 publicPath: "dist/"
 apiPath: "https://focusapi.vemic.com/mock/209"
 # server
-domainUrl: "https://app2.scm.prod.com"
-mainAppDomainUrl: "https://scm.prod.com"
+domainUrl: "https://app2.paludina.prod.com"
+mainAppDomainUrl: "https://paludina.prod.com"
 backendUrl: "https://focusapi.vemic.com/mock/209"
 
 # cdn 地址

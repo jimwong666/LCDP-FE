@@ -5,15 +5,23 @@ const routes = [
 	{
 		path: '/',
 		exact: true,
-		key: '1',
+		key: '/',
 		breadcrumb: ['首页'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
 	},
 	{
+		path: '/work',
+		exact: true,
+		key: '/work',
+		breadcrumb: ['工作'],
+		componentTemplate: LayoutBase,
+		child: React.lazy(() => import('@pages/work')),
+	},
+	{
 		path: '/app1/goods/add',
 		exact: true,
-		key: '2',
+		key: '/app1/goods/add',
 		breadcrumb: ['基础资料', '新增物品'],
 		componentTemplate: LayoutBase,
 		child: null,
@@ -21,7 +29,7 @@ const routes = [
 	{
 		path: '/app1/goods/list',
 		exact: true,
-		key: '3',
+		key: '/app1/goods/list',
 		breadcrumb: ['基础资料', '物品列表'],
 		componentTemplate: LayoutBase,
 		child: null,
@@ -29,7 +37,7 @@ const routes = [
 	{
 		path: '/app1/supplier/add',
 		exact: true,
-		key: '4',
+		key: '/app1/supplier/add',
 		breadcrumb: ['基础资料', '新增供应商'],
 		componentTemplate: LayoutBase,
 		child: null,
@@ -37,7 +45,7 @@ const routes = [
 	{
 		path: '/app1/supplier/list',
 		exact: true,
-		key: '5',
+		key: '/app1/supplier/list',
 		breadcrumb: ['基础资料', '供应商列表'],
 		componentTemplate: LayoutBase,
 		child: null,
@@ -45,7 +53,7 @@ const routes = [
 	{
 		path: '/app2/pm/add',
 		exact: true,
-		key: '6',
+		key: '/app2/pm/add',
 		breadcrumb: ['项目管理', '新增项目'],
 		componentTemplate: LayoutBase,
 		child: null,
@@ -53,7 +61,7 @@ const routes = [
 	{
 		path: '/app2/pm/list',
 		exact: true,
-		key: '7',
+		key: '/app2/pm/list',
 		breadcrumb: ['项目管理', '项目列表'],
 		componentTemplate: LayoutBase,
 		child: null,

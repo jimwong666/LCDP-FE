@@ -20,10 +20,16 @@
     "stylelint": "npx stylelint --fix \"**/*.{css,scss,less}\"",
     "dumi:dev": "node generateDocs && dumi dev",
     "dumi:build": "node generateDocs && dumi build",
-    "build:aeps-rc": "lerna run build --scope=aeps-rc",
+    "build:aeps-rc": "lerna run build --scope=eps-rc",
     "publish": "lerna publish",
     "commit": "git-cz",
-		"genlog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+		"genlog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+		"pm2start:dev": "lerna run pm2start:dev",
+		"pm2start": "lerna run pm2start",
+		"pm2restart": "pm2 restart all",
+		"pm2monit": "pm2 monit",
+		"pm2stop": "pm2 stop all",
+		"pm2delete": "pm2 delete all"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

@@ -19,6 +19,7 @@ const fetchPreDataFailure = (error) => ({
 });
 
 export const asyncFetchPreDataAction = (callback) => (dispatch) => {
+	console.log(666);
 	dispatch(fetchPreDataRequest());
 	axios
 		.get(`${BASE_URL}/api/imgList`)

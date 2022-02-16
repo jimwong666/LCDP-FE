@@ -47,8 +47,8 @@ module.exports = merge(webpackBaseConfig, {
 					{
 						loader: 'postcss-loader',
 						options: {
-							config: {
-								path: path.resolve(__dirname, './postcss.config.js'), // 使用postcss单独的配置文件
+							postcssOptions: {
+								config: path.resolve(__dirname, './postcss.config.js'), // 使用postcss单独的配置文件
 							},
 						},
 					},
@@ -73,7 +73,9 @@ module.exports = merge(webpackBaseConfig, {
 					{
 						loader: 'less-loader',
 						options: {
-							javascriptEnabled: true,
+							lessOptions: {
+								javascriptEnabled: true,
+							},
 						},
 					},
 				],
@@ -119,7 +121,7 @@ module.exports = merge(webpackBaseConfig, {
 			// automaticNameDelimiter: '~',
 			// name: true,
 			cacheGroups: {
-				vendors: {
+				defaultVendors: {
 					name: 'vendors',
 					test: /[\\/]node_modules[\\/]/,
 					chunks: 'initial', // 只打包初始时依赖的第三方

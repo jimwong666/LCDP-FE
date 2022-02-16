@@ -33,34 +33,28 @@ export default class Work extends React.Component {
 		const { preData, preData2 } = this.props;
 		console.log('preData', preData.data, preData2.data);
 
-		const a = {
-			b: 666,
-		};
-		console.log('test', false ?? '123');
-
 		return (
 			<>
-				{/*<ul>*/}
-				{/*	{preData?.data?.map((item) => {*/}
-				{/*		return (*/}
-				{/*			<li key={item.id}>*/}
-				{/*				<span>{item.name}</span>*/}
-				{/*				<img src={item.imgUrl} alt="img" />*/}
-				{/*			</li>*/}
-				{/*		);*/}
-				{/*	})}*/}
-				{/*</ul>*/}
-				{/*<ul>*/}
-				{/*	{preData2?.data?.map((item) => {*/}
-				{/*		return (*/}
-				{/*			<li key={item.id}>*/}
-				{/*				<span>{item.name}</span>*/}
-				{/*				<img src={item.imgUrl} alt="img" />*/}
-				{/*			</li>*/}
-				{/*		);*/}
-				{/*	})}*/}
-				{/*</ul>*/}
-				666
+				<ul>
+					{preData?.data?.data?.map((item) => {
+						return (
+							<li key={item.id}>
+								<span>{item.name}</span>
+								<img src={item.imgUrl} alt="img" />
+							</li>
+						);
+					})}
+				</ul>
+				<ul>
+					{preData2?.data?.data?.map((item) => {
+						return (
+							<li key={item.id}>
+								<span>{item.name}</span>
+								<img src={item.imgUrl} alt="img" />
+							</li>
+						);
+					})}
+				</ul>
 			</>
 		);
 	}

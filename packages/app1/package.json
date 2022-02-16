@@ -4,11 +4,11 @@
 	"private": true,
 	"description": "> TODO: description",
 	"author": "jim <798165604@qq.com>",
-	"homepage": "https://github.com/jimwong666/ssss#readme",
+	"homepage": "https://github.com/jimwong666/LCDP-FE#readme",
 	"license": "ISC",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jimwong666/ssss.git"
+		"url": "git+https://github.com/jimwong666/LCDP-FE.git"
 	},
 	"scripts": {
 		"fe:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./client/config/webpack.config.js --mode=development",
@@ -23,7 +23,7 @@
 		"pm2delete": "pm2 delete all"
 	},
 	"bugs": {
-		"url": "https://github.com/jimwong666/ssss/issues"
+		"url": "https://github.com/jimwong666/LCDP-FE/issues"
 	},
 	"browserslist": {
 		"production": [

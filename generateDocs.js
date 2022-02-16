@@ -83,10 +83,10 @@ const copyFile = function (fromFile, toFile) {
 					chunk = Buffer.from(chunk.toString().replace('English | [简体中文](./README.zh-CN.md)', ''));
 					this.push(
 						`---
-title: A doc about this SSSS
+title: A doc about this LDCP
 hero:
-  title: SSSS
-  desc: 📖 A doc about this SSSS
+  title: LDCP
+  desc: 📖 A doc about this LDCP
 footer: 😊😁😎😉😜🤞✌
 ---
 ` + chunk,
@@ -97,10 +97,10 @@ footer: 😊😁😎😉😜🤞✌
 					chunk = Buffer.from(chunk.toString().replace('简体中文 | [English](./README.md)', ''));
 					this.push(
 						`---
-title: 关于SSSS的项目文档
+title: 关于LDCP的项目文档
 hero:
-  title: SSSS
-  desc: 📖 关于SSSS的项目文档
+  title: LDCP
+  desc: 📖 关于LDCP的项目文档
 footer: 😊😁😎😉😜🤞✌
 ---
 ` + chunk,

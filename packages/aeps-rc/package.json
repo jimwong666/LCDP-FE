@@ -3,7 +3,7 @@
 	"version": "0.1.5",
 	"description": "> TODO: description",
 	"author": "jim <798165604@qq.com>",
-	"homepage": "https://github.com/jimwong666/ssss#readme",
+	"homepage": "https://github.com/jimwong666/LCDP-FE#readme",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"module": "es/index.js",
@@ -19,7 +19,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jimwong666/ssss.git"
+		"url": "git+https://github.com/jimwong666/LCDP-FE.git"
 	},
 	"scripts": {
 		"test": "echo \"Error: run tests from root\" && exit 1",
@@ -34,7 +34,7 @@
 		"not IE 10"
 	],
 	"bugs": {
-		"url": "https://github.com/jimwong666/ssss/issues"
+		"url": "https://github.com/jimwong666/LCDP-FE/issues"
 	},
 	"bundleDependencies": false,
 	"peerDependencies": {

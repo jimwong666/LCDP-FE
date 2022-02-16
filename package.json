@@ -1,5 +1,5 @@
 {
-  "name": "ssss",
+  "name": "LDCP",
   "private": true,
   "scripts": {
     "install": "lerna bootstrap",

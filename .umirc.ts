@@ -2,11 +2,11 @@ import { defineConfig } from 'dumi';
 import path from 'path';
 
 export default defineConfig({
-	title: 'SSSS-project',
+	title: 'LCDP',
 	mode: 'site',
 	outputPath: 'docs',
-	base: '/ssss',
-	publicPath: '/ssss/',
+	base: '/lcdp',
+	publicPath: '/lcdp/',
 	resolve: {
 		includes: ['docs-sources'],
 	},

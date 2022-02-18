@@ -5,7 +5,7 @@ const routes = [
 	{
 		path: '/pm/add',
 		exact: true,
-		key: '6',
+		key: '/pm/add',
 		breadcrumb: ['项目管理', '新增项目'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
@@ -13,7 +13,7 @@ const routes = [
 	{
 		path: '/pm/list',
 		exact: true,
-		key: '7',
+		key: '/pm/list',
 		breadcrumb: ['项目管理', '项目列表'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),

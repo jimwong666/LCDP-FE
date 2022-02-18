@@ -54,6 +54,7 @@
 		"css-loader": "^6.6.0",
 		"extend": "^3.0.2",
 		"file-loader": "^6.2.0",
+		"form-render": "^1.9.2",
 		"gulp": "^4.0.2",
 		"gulp-clean": "^0.4.0",
 		"gulp-sass": "^4.1.0",

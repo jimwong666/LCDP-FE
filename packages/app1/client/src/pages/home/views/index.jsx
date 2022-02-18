@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import classNames from 'classnames/bind';
 import styles from '../styles/index.scss';
 import { fetchTestAction } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => ({
 	),
 });
 
+@withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Index extends React.Component {
 	constructor(props) {
@@ -38,6 +40,7 @@ export default class Index extends React.Component {
 	render() {
 		return (
 			<div className={cx('home-content')}>
+				<div>666666677776</div>
 				<div style={{ background: '#000', height: '1920px', width: '100%' }}>
 					11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
 					11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111

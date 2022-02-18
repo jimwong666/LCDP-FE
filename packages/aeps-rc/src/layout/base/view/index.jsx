@@ -26,7 +26,7 @@ export default class Base extends React.Component {
 	render() {
 		const { __POWERED_BY_QIANKUN__ } = window;
 		const { collapsed } = this.state;
-		const { selectKeys, children, menuComponents, breadcrumbs } = this.props;
+		const { location, children, menuComponents, breadcrumbs } = this.props;
 
 		return __POWERED_BY_QIANKUN__ ? (
 			<Layout className={cx('microAppLayout')}>{children}</Layout>
@@ -34,7 +34,7 @@ export default class Base extends React.Component {
 			<Layout className={cx('layout')}>
 				<Sider className="sider" collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
 					<div className={cx('logo')} />
-					<Menu theme="dark" defaultSelectedKeys={[selectKeys]} mode="inline">
+					<Menu theme="dark" defaultSelectedKeys={[location?.pathname]} mode="inline">
 						{menuComponents}
 					</Menu>
 				</Sider>

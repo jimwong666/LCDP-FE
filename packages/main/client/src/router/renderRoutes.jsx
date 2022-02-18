@@ -24,7 +24,6 @@ const renderRoutes = (routes, extraProps = {}, switchProps = {}) =>
 						return (
 							<route.componentTemplate
 								breadcrumbArr={route.breadcrumb}
-								selectKeys={route.key}
 								{...props}
 								{...extraProps}
 								route={route}

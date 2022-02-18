@@ -48,6 +48,7 @@ const apps = MICRO_APPS.map((app) => {
 		},
 	};
 });
+console.log('apps', apps);
 
 registerMicroApps(apps, {
 	beforeLoad: [

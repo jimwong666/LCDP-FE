@@ -8,13 +8,13 @@ const menuData = [
 		text: '项目管理',
 		subMenuGroup: [
 			{
-				menuKey: '6',
+				menuKey: '/pm/add',
 				path: '/pm/add',
 				icon: null,
 				text: '新增项目',
 			},
 			{
-				menuKey: '7',
+				menuKey: '/pm/list',
 				path: '/pm/list',
 				icon: null,
 				text: '项目列表',

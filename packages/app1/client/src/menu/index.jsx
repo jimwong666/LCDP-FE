@@ -8,25 +8,25 @@ const menuData = [
 		text: '基础资料',
 		subMenuGroup: [
 			{
-				menuKey: '2',
+				menuKey: '/goods/add',
 				path: '/goods/add',
 				icon: null,
 				text: '新增物品',
 			},
 			{
-				menuKey: '3',
+				menuKey: '/goods/list',
 				path: '/goods/list',
 				icon: null,
 				text: '物品列表',
 			},
 			{
-				menuKey: '4',
+				menuKey: '/supplier/add',
 				path: '/supplier/add',
 				icon: null,
 				text: '新增供应商',
 			},
 			{
-				menuKey: '5',
+				menuKey: '/supplier/list',
 				path: '/supplier/list',
 				icon: null,
 				text: '供应商列表',

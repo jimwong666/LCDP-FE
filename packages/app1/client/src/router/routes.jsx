@@ -5,15 +5,15 @@ const routes = [
 	{
 		path: '/goods/add',
 		exact: true,
-		key: '2',
+		key: '/goods/add',
 		breadcrumb: ['基础资料', '新增物品'],
 		componentTemplate: LayoutBase,
-		child: React.lazy(() => import('@pages/home')),
+		child: React.lazy(() => import('@pages/home/add')),
 	},
 	{
 		path: '/goods/list',
 		exact: true,
-		key: '3',
+		key: '/goods/list',
 		breadcrumb: ['基础资料', '物品列表'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
@@ -21,7 +21,7 @@ const routes = [
 	{
 		path: '/supplier/add',
 		exact: true,
-		key: '4',
+		key: '/supplier/add',
 		breadcrumb: ['基础资料', '新增供应商'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
@@ -29,7 +29,7 @@ const routes = [
 	{
 		path: '/supplier/list',
 		exact: true,
-		key: '5',
+		key: '/supplier/list',
 		breadcrumb: ['基础资料', '供应商列表'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),

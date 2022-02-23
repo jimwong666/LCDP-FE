@@ -31,7 +31,7 @@ export default class Work extends React.Component {
 
 	render() {
 		const { preData, preData2 } = this.props;
-		console.log('preData', preData.data, preData2.data);
+		console.log('preData', preData?.data, preData2?.data);
 
 		return (
 			<>

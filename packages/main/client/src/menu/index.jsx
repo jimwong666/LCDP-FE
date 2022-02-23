@@ -1,68 +1,68 @@
 import React from 'react';
-import { HomeOutlined, ReconciliationOutlined, HddOutlined } from '@ant-design/icons';
+import { BorderlessTableOutlined, OrderedListOutlined, FormOutlined, InfoCircleOutlined } from '@ant-design/icons';
 
 const menuData = [
 	{
 		menuKey: '/',
 		path: '/',
-		icon: <HomeOutlined />,
-		text: '首页',
+		icon: <BorderlessTableOutlined />,
+		text: '工作台',
 	},
 	{
-		menuKey: '/work',
-		path: '/work',
-		icon: <HomeOutlined />,
-		text: '工作',
-	},
-	{
-		subMenuKey: 'base',
-		icon: <HddOutlined />,
-		text: '基础资料',
+		subMenuKey: 'form',
+		icon: <FormOutlined />,
+		text: '表单',
 		subMenuGroup: [
 			{
-				menuKey: '/app1/goods/add',
-				path: '/app1/goods/add',
+				menuKey: '/app1/template/add',
+				path: '/app1/template/add',
 				icon: null,
-				text: '新增物品',
+				text: '模板新增',
 			},
 			{
-				menuKey: '/app1/goods/list',
-				path: '/app1/goods/list',
+				menuKey: '/app1/template/list',
+				path: '/app1/template/list',
 				icon: null,
-				text: '物品列表',
+				text: '模板列表',
 			},
 			{
-				menuKey: '/app1/supplier/add',
-				path: '/app1/supplier/add',
+				menuKey: '/app1/list',
+				path: '/app1/list',
 				icon: null,
-				text: '新增供应商',
-			},
-			{
-				menuKey: '/app1/supplier/list',
-				path: '/app1/supplier/list',
-				icon: null,
-				text: '供应商列表',
+				text: '成品列表',
 			},
 		],
 	},
 	{
-		subMenuKey: 'pm',
-		icon: <ReconciliationOutlined />,
-		text: '项目管理',
+		subMenuKey: 'list',
+		icon: <OrderedListOutlined />,
+		text: '列表',
 		subMenuGroup: [
 			{
-				menuKey: '/app2/pm/add',
-				path: '/app2/pm/add',
+				menuKey: '/app2/template/add',
+				path: '/app2/template/add',
 				icon: null,
-				text: '新增项目',
+				text: '模板新增',
 			},
 			{
-				menuKey: '/app2/pm/list',
-				path: '/app2/pm/list',
+				menuKey: '/app2/template/list',
+				path: '/app2/template/list',
 				icon: null,
-				text: '项目列表',
+				text: '模板列表',
+			},
+			{
+				menuKey: '/app2/list',
+				path: '/app2/list',
+				icon: null,
+				text: '成品列表',
 			},
 		],
+	},
+	{
+		menuKey: '/about',
+		path: '/about',
+		icon: <InfoCircleOutlined />,
+		text: '关于',
 	},
 ];
 

@@ -1,23 +1,29 @@
 import React from 'react';
-import { HomeOutlined, ReconciliationOutlined, HddOutlined } from '@ant-design/icons';
+import { OrderedListOutlined } from '@ant-design/icons';
 
 const menuData = [
 	{
-		subMenuKey: 'pm',
-		icon: <ReconciliationOutlined />,
-		text: '项目管理',
+		subMenuKey: 'list',
+		icon: <OrderedListOutlined />,
+		text: '列表',
 		subMenuGroup: [
 			{
-				menuKey: '/pm/add',
-				path: '/pm/add',
+				menuKey: '/template/add',
+				path: '/template/add',
 				icon: null,
-				text: '新增项目',
+				text: '模板新增',
 			},
 			{
-				menuKey: '/pm/list',
-				path: '/pm/list',
+				menuKey: '/template/list',
+				path: '/template/list',
 				icon: null,
-				text: '项目列表',
+				text: '模板列表',
+			},
+			{
+				menuKey: '/list',
+				path: '/list',
+				icon: null,
+				text: '成品列表',
 			},
 		],
 	},

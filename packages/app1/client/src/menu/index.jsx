@@ -1,35 +1,29 @@
 import React from 'react';
-import { HomeOutlined, ReconciliationOutlined, HddOutlined } from '@ant-design/icons';
+import { FormOutlined } from '@ant-design/icons';
 
 const menuData = [
 	{
-		subMenuKey: 'base',
-		icon: <HddOutlined />,
-		text: '基础资料',
+		subMenuKey: 'form',
+		icon: <FormOutlined />,
+		text: '表单',
 		subMenuGroup: [
 			{
-				menuKey: '/goods/add',
-				path: '/goods/add',
+				menuKey: '/template/add',
+				path: '/template/add',
 				icon: null,
-				text: '新增物品',
+				text: '新增模板',
 			},
 			{
-				menuKey: '/goods/list',
-				path: '/goods/list',
+				menuKey: '/template/list',
+				path: '/template/list',
 				icon: null,
-				text: '物品列表',
+				text: '模板列表',
 			},
 			{
-				menuKey: '/supplier/add',
-				path: '/supplier/add',
+				menuKey: '/list',
+				path: '/list',
 				icon: null,
-				text: '新增供应商',
-			},
-			{
-				menuKey: '/supplier/list',
-				path: '/supplier/list',
-				icon: null,
-				text: '供应商列表',
+				text: '成品列表',
 			},
 		],
 	},

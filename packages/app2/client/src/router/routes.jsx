@@ -3,18 +3,26 @@ import { LayoutBase } from 'aeps-rc';
 
 const routes = [
 	{
-		path: '/pm/add',
+		path: '/template/add',
 		exact: true,
-		key: '/pm/add',
-		breadcrumb: ['项目管理', '新增项目'],
+		key: '/template/add',
+		breadcrumb: ['列表', '新增模板'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
 	},
 	{
-		path: '/pm/list',
+		path: '/template/list',
 		exact: true,
-		key: '/pm/list',
-		breadcrumb: ['项目管理', '项目列表'],
+		key: '/template/list',
+		breadcrumb: ['列表', '模板列表'],
+		componentTemplate: LayoutBase,
+		child: React.lazy(() => import('@pages/home')),
+	},
+	{
+		path: '/list',
+		exact: true,
+		key: '/list',
+		breadcrumb: ['列表', '成品列表'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
 	},

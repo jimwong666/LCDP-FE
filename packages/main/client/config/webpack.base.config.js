@@ -39,7 +39,7 @@ module.exports = {
 		Object.keys(entryObj).map((chunkName) => {
 			// 多页面兼容
 			return new HtmlWebpackPlugin({
-				title: appConfig.appName,
+				title: appConfig.title,
 				filename: `${chunkName}.html`,
 				chunks: [chunkName],
 				template: clientPathResolve('public/index.ejs'),

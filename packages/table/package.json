@@ -79,7 +79,6 @@
 	},
 	"dependencies": {
 		"@babel/runtime-corejs3": "^7.17.2",
-		"lcdp-rc": "^0.1.2",
 		"antd": "^4.4.2",
 		"axios": "^0.20.0",
 		"cheerio": "^1.0.0-rc.5",
@@ -97,6 +96,7 @@
 		"fr-generator": "^1.0.1",
 		"immutability-helper": "^3.1.1",
 		"immutable": "^4.0.0",
+		"lcdp-rc": "^0.1.2",
 		"log4js": "^6.3.0",
 		"moment": "^2.27.0",
 		"nanoid": "^2.1.11",
@@ -115,6 +115,7 @@
 		"redux-immutable": "^4.0.0",
 		"redux-thunk": "^2.3.0",
 		"serve-favicon": "^2.5.0",
+		"table-render": "^1.2.3",
 		"use-debounce": "^5.1.0",
 		"validator": "^13.5.2",
 		"walk": "^2.3.14",

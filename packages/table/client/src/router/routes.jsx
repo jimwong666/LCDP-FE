@@ -3,38 +3,28 @@ import { LayoutBase } from 'lcdp-rc';
 
 const routes = [
 	{
-		path: '/',
+		path: '/template/add',
 		exact: true,
-		key: '/',
-		breadcrumb: ['工作台'],
+		key: '/template/add',
+		breadcrumb: ['列表', '新增模板'],
 		componentTemplate: LayoutBase,
 		child: React.lazy(() => import('@pages/home')),
 	},
-	// form
 	{
-		path: '/form/*',
+		path: '/template/list',
 		exact: true,
-		key: '/form/*',
-		breadcrumb: ['表单'],
+		key: '/template/list',
+		breadcrumb: ['列表', '模板列表'],
 		componentTemplate: LayoutBase,
-		child: null,
-	},
-	// table
-	{
-		path: '/table/*',
-		exact: true,
-		key: '/table/*',
-		breadcrumb: ['列表'],
-		componentTemplate: LayoutBase,
-		child: null,
+		child: React.lazy(() => import('@pages/home')),
 	},
 	{
-		path: '/about',
+		path: '/list',
 		exact: true,
-		key: '/about',
-		breadcrumb: ['关于'],
+		key: '/list',
+		breadcrumb: ['列表', '成品列表'],
 		componentTemplate: LayoutBase,
-		child: React.lazy(() => import('@pages/about')),
+		child: React.lazy(() => import('@pages/home')),
 	},
 	{
 		path: '*',

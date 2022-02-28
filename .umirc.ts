@@ -11,7 +11,7 @@ export default defineConfig({
 		includes: ['docs-sources'],
 	},
 	alias: {
-		'@aeps-rc': path.resolve(__dirname, 'packages/aeps-rc/src'),
+		'@lcdp-rc': path.resolve(__dirname, 'packages/lcdp-rc/src'),
 	},
 	// more config: https://d.umijs.org/config
 });

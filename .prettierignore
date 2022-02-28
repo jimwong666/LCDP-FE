@@ -16,6 +16,6 @@ package.json
 
 docs/**/*
 
-# aeps-rc
-**/aeps-rc/lib/**/*
-**/aeps-rc/es/**/*
+# lcdp-rc
+**/lcdp-rc/lib/**/*
+**/lcdp-rc/es/**/*

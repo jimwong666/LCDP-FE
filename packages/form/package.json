@@ -1,5 +1,5 @@
 {
-	"name": "main",
+	"name": "form",
 	"version": "0.1.0",
 	"private": true,
 	"description": "> TODO: description",
@@ -54,6 +54,7 @@
 		"css-loader": "^6.6.0",
 		"extend": "^3.0.2",
 		"file-loader": "^6.2.0",
+		"form-render": "^1.9.2",
 		"gulp": "^4.0.2",
 		"gulp-clean": "^0.4.0",
 		"gulp-sass": "^4.1.0",
@@ -102,7 +103,6 @@
 		"nanoid": "^2.1.11",
 		"pope": "^2.0.2",
 		"prop-types": "^15.x",
-		"qiankun": "^2.4.5",
 		"rc-color-picker": "^1.2.6",
 		"react": "^16.13.1",
 		"react-dnd": "^11.1.3",

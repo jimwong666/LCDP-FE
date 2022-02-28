@@ -9,7 +9,7 @@ export default {
 		importLibToEs: true,
 	},
 	umd: {
-		name: 'aeps-rc',
+		name: 'lcdp-rc',
 		minFile: true,
 		sourcemap: true,
 		globals: {

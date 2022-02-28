@@ -1,11 +1,11 @@
-# `aeps-rc`
+# `lcdp-rc`
 
 > 业务组件库
 
 ## Usage
 
 ```js
-import { Base } from 'aeps-rc/layout';
+import { Base } from 'lcdp-rc/layout';
 
 // ...
 ```

@@ -39,7 +39,7 @@ export default class Base extends React.Component {
 					</Menu>
 				</Sider>
 				<div className={cx('main')}>
-					<div className={cx('info-bar')}>这里是aeps-rc!</div>
+					<div className={cx('info-bar')}>topInfo bar</div>
 					<Breadcrumb className={cx('subInfo-bar')}>{breadcrumbs}</Breadcrumb>
 					<Content className={cx('content')}>
 						{children}

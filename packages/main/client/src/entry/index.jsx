@@ -82,8 +82,8 @@ registerMicroApps(apps, {
  * 全局变量
  */
 const { onGlobalStateChange, setGlobalState } = initGlobalState({
-	app1_hotUpdate: false,
-	app2_hotUpdate: false,
+	form_hotUpdate: false,
+	list_hotUpdate: false,
 });
 
 onGlobalStateChange((value, prev) => {

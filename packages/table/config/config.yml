@@ -1,12 +1,12 @@
 
-# config
-appName: "main"
+# server config
+appName: "table"
 version: "1.0.0"
 clientType: "PC_WEB"
 title: "microFrontend-1"
-serverPort: 6000
+serverPort: 6002
 logLevel: "INFO"
-logDist: "d:\\log/main"
+logDist: "d:\\log/table"
 # bff keep-alive超时时间
 # keepAliveTimeout: 60000
 # backend socket超时时间
@@ -17,24 +17,23 @@ fileSocketTimeout: 180000
 encoding: "base64"
 
 # dev
-## client
-dev_clientPort: 4000
-dev_publicPath: '/'
-dev_apiPath: "https://www.fastmock.site/mock/725fd773d01b56b0e9cf87bd2afa56e9/api"
-## server
-dev_domainUrl: "http://paludina.dev.com"
+# client
+dev_clientPort: 4002
+dev_publicPath: ""
+dev_apiPath: "https://focusapi.vemic.com/mock/209"
+# server
+dev_domainUrl: "http://table.paludina.dev.com"
+dev_mainAppDomainUrl: "http://paludina.dev.com"
 dev_backendUrl: "https://focusapi.vemic.com/mock/209"
 
 # prod
-## client
-publicPath: "/dist/"
+# client
+publicPath: "dist/"
 apiPath: "https://focusapi.vemic.com/mock/209"
-## server
-domainUrl: "https://paludina.prod.com"
+# server
+domainUrl: "https://table.paludina.prod.com"
+mainAppDomainUrl: "https://paludina.prod.com"
 backendUrl: "https://focusapi.vemic.com/mock/209"
-
-# 微应用
-microApps: ['form', 'table']
 
 # cdn 地址
 cdn: ""

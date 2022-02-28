@@ -55,7 +55,7 @@ $ npm run eslint // 代码语法等校验（js,jsx,tsx,md,json）
 $ npm run stylelint // 样式代码语法等校验（css,scss,less）
 $ npm run dumi:dev // 预览文档（开发环境）
 $ npm run dumi:build // 打包文档（生产环境）
-$ npm run build:aeps-rc // 打包aeps-rc组件
+$ npm run build:lcdp-rc // 打包lcdp-rc组件
 $ npm run publish // 发布组件到npm（网络大多数时候是不同的，原因不详，这时使用```npm publish --access public```发布）
 $ npm run commit // commit代码
 ````

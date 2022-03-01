@@ -167,7 +167,7 @@ const Demo = () => {
 				]}
 			/>
 			<Table
-				pagination={{ pageSize: 4 }}
+				pagination={{ pageSize: 10 }}
 				columns={columns}
 				rowKey="id"
 				toolbarRender={() => [

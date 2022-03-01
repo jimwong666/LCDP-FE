@@ -7,6 +7,8 @@ import {
 	addGlobalUncaughtErrorHandler,
 } from 'qiankun';
 import React from 'react';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 import ReactDOM from 'react-dom';
 import RootRouter from '@router';
 import { applyMiddleware, createStore } from 'redux';
@@ -24,7 +26,9 @@ const store = applyMiddleware(thunk, simpleAsync)(createStore)(
 const render = (App) => {
 	ReactDOM.render(
 		<Provider store={store}>
-			<App />
+			<ConfigProvider locale={zhCN}>
+				<App />
+			</ConfigProvider>
 		</Provider>,
 		document.getElementById('root'),
 	);
@@ -98,6 +102,12 @@ setGlobalState({
  * 添加全局的未捕获异常处理
  */
 const handler = function (e) {
+	// Ignore ResizeObserver error
+	if (e.message === 'ResizeObserver loop limit exceeded') {
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+		return console.log('【忽略】未捕获的异常：ResizeObserver loop limit exceeded');
+	}
 	console.log('未捕获的异常：');
 	console.log(e);
 };

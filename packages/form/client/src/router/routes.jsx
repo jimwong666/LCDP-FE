@@ -24,7 +24,7 @@ const routes = [
 		key: '/list',
 		breadcrumb: ['表单', '成品列表'],
 		componentTemplate: LayoutBase,
-		child: React.lazy(() => import('@pages/home')),
+		child: React.lazy(() => import('@pages/list')),
 	},
 	{
 		path: '*',

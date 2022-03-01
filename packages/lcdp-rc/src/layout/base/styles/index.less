@@ -2,9 +2,11 @@ html {
 	overflow: hidden;
 
 	.logo {
+		text-align: center;
 		height: 40px;
 		margin: 16px;
-		background: url('../images/logo.png');
+		// TODO: 测试一下生产环境 background 的图片是否显示正常，开发环境下图片显示有问题
+		background: url('../images/logo.png') repeat;
 	}
 
 	.microAppLayout {
@@ -16,7 +18,8 @@ html {
 
 		.main {
 			display: flex;
-			flex: 1 1 auto;
+			flex: 1;
+			overflow: hidden;
 			flex-direction: column;
 
 			.info-bar {

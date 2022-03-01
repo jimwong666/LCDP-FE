@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import withBase from '../dependencies/WithBase';
 
 import styles from '../styles/index.less';
+import logo from '../images/logo.png';
 
 const { Content, Sider } = Layout;
 const cx = classNames.bind(styles);
@@ -33,7 +34,9 @@ export default class Base extends React.Component {
 		) : (
 			<Layout className={cx('layout')}>
 				<Sider className="sider" collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-					<div className={cx('logo')} />
+					<div className={cx('logo')}>
+						<img src={logo} alt="" />
+					</div>
 					<Menu theme="dark" defaultSelectedKeys={[location?.pathname]} mode="inline">
 						{menuComponents}
 					</Menu>

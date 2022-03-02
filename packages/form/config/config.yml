@@ -20,7 +20,7 @@ encoding: "base64"
 # client
 dev_clientPort: 4001
 dev_publicPath: ""
-dev_apiPath: "https://focusapi.vemic.com/mock/209"
+dev_apiPath: "https://www.fastmock.site/mock/0a0043432a43fb517e7bb068685f2114/testapi"
 # server
 dev_domainUrl: "http://form.paludina.dev.com"
 dev_mainAppDomainUrl: "http://paludina.dev.com"

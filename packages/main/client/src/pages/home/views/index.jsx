@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { Table, Input, Radio, Form, Space, Button, Row, Col, Select, DatePicker, Divider } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import styles from '../styles/index.scss';
-import { fetchTestAction } from '../actions';
+import { fetchTestAction, asyncCustomTestFetchAction } from '../actions';
 
 const { RangePicker } = DatePicker;
 const cx = classNames.bind(styles);
@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
 	...bindActionCreators(
 		{
 			fetchTest: fetchTestAction,
+			asyncCustomTestFetch: asyncCustomTestFetchAction,
 		},
 		dispatch,
 	),
@@ -29,10 +30,9 @@ const tableColumns = [
 		title: '序号',
 		fixed: true,
 		render: (text, record, index) => {
-			console.log(text, record, index);
-			return record.key;
+			// console.log(text, record, index);
+			return index + 1;
 		},
-		width: 600,
 	},
 	{
 		title: '页面名称',
@@ -82,6 +82,7 @@ const tableColumns = [
 				<a>删除</a>
 			</Space>
 		),
+		width: 160,
 		fixed: 'right',
 	},
 ];
@@ -90,8 +91,8 @@ const data = [];
 for (let i = 1; i <= 100; i++) {
 	data.push({
 		key: i,
-		name: 'John Brown',
-		template: '模板',
+		pageName: 'John Brown',
+		templateName: '模板',
 		path: 'a/b/c',
 		status: Math.floor(Math.random() * 3),
 		createTime: '20220102',
@@ -104,21 +105,37 @@ for (let i = 1; i <= 100; i++) {
 export default class Index extends React.Component {
 	constructor(props) {
 		super(props);
-		this.test = this.test.bind(this);
+		this.state = {
+			listData: {},
+			loading: true,
+		};
 	}
 
-	test(txt) {
-		const { fetchTest } = this.props;
-		fetchTest(txt);
+	componentDidMount() {
+		const { asyncCustomTestFetch } = this.props;
+		asyncCustomTestFetch({}, () => {
+			this.setState({
+				loading: false,
+			});
+		});
+	}
+
+	static getDerivedStateFromProps(props, state) {
+		const { customTestFetch } = props;
+		console.log('customTestFetch', customTestFetch);
+		return customTestFetch?.isFetching || { listData: customTestFetch?.data };
 	}
 
 	render() {
+		const { listData, loading } = this.state;
+		const { asyncCustomTestFetch } = this.props;
+
 		return (
 			<div className={cx('home-content')}>
 				<Form
 					// form={form}
 					name="advanced_search"
-					className="ant-advanced-search-form"
+					className={cx('home-search-form')}
 					onFinish={() => {}}
 					initialValues={{
 						'Field-1': 123,
@@ -129,17 +146,17 @@ export default class Index extends React.Component {
 					<Row gutter={24}>
 						<Col span={6}>
 							<Form.Item name="pageName" label="页面名称">
-								<Input placeholder="请填写页面名称" />
+								<Input allowClear placeholder="请填写页面名称" />
 							</Form.Item>
 						</Col>
 						<Col span={6}>
 							<Form.Item name="templateName" label="模板名称">
-								<Input placeholder="请填写模板名称" />
+								<Input allowClear placeholder="请填写模板名称" />
 							</Form.Item>
 						</Col>
 						<Col span={6}>
 							<Form.Item name="status" label="状态">
-								<Select placeholder="请选择状态">
+								<Select allowClear placeholder="请选择状态">
 									<Select.Option value="1">已启用</Select.Option>
 									<Select.Option value="0">已停用</Select.Option>
 								</Select>
@@ -170,17 +187,35 @@ export default class Index extends React.Component {
 				<Divider />
 				<Table
 					columns={tableColumns}
-					dataSource={data}
-					scroll={{
-						x: '100vw',
-						// y: '240px',
-					}}
+					dataSource={listData?.data}
+					scroll={
+						{
+							// x: '100vw',
+							// y: '240px',
+						}
+					}
 					bordered={false}
-					loading={false}
+					loading={loading}
 					pagination={{
 						position: ['none', 'bottomRight'],
 						hideOnSinglePage: true,
 						showQuickJumper: true,
+						current: listData?.current,
+						pageSize: listData?.pageSize,
+						total: listData?.total,
+						onChange: (current, pageSize) => {
+							this.setState({
+								loading: true,
+							});
+							asyncCustomTestFetch({ current, pageSize }, () => {
+								this.setState({
+									loading: false,
+								});
+							});
+						},
+						// onShowSizeChange: (current, size) => {
+						// 	console.log('onShowSizeChange', current, size);
+						// },
 					}}
 					size="default"
 					expandable={null}
@@ -218,7 +253,7 @@ export default class Index extends React.Component {
 						</div>
 					)}
 					showHeader
-					footer={() => <>共 XXX 条</>}
+					footer={() => <>共 {listData?.total} 条</>}
 					rowSelection={undefined}
 					xScroll="scroll"
 					yScroll="scroll"
@@ -231,20 +266,4 @@ export default class Index extends React.Component {
 			</div>
 		);
 	}
-
-	// render() {
-	// 	return (
-	// 		<div className={cx('home-content')}>
-	// 			<div style={{ background: '#eee', height: '1920px', width: '100%' }}>
-	// 				11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
-	// 				11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
-	// 				11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
-	// 				11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
-	// 				11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
-	// 				11111111111111111111111111111111 11111111111111111111111111111111 11111111111111111111111111111111
-	// 				11111111111111111111111111111111
-	// 			</div>
-	// 		</div>
-	// 	);
-	// }
 }

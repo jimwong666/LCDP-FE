@@ -11,6 +11,11 @@
   //	background-image: linear-gradient(#fff, transparent);
   //	z-index: 99;
   //}
+	.home-search-form {
+		:global(.ant-picker){
+			width: 100%;
+		}
+	}
 }
 
 .info-list {

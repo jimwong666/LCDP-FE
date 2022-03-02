@@ -1,3 +1,5 @@
+import { message } from 'antd';
+
 import update from 'immutability-helper';
 
 // actionType后缀
@@ -24,16 +26,20 @@ const simpleAsync =
 			});
 			return request
 				.then((res) => {
+					console.log('action', res.data);
 					dispatch({
 						type: `${actionTypePrefix}_${REQUEST_SUCCESS_SUFFIX}`,
 						data: res.data,
 					});
-					callback && callback(res.data);
+					return callback && callback(res.data);
 				})
 				.catch((error) => {
+					// message.error
+					message.error(error?.message);
+					// catch 一下
 					dispatch({
 						type: `${actionTypePrefix}_${REQUEST_FAILURE_SUFFIX}`,
-						error,
+						error: error?.message,
 					});
 				});
 		}
@@ -64,9 +70,11 @@ export const withAsyncReducer =
 				return update(state, {
 					$set: {
 						isFetching: true,
+						data: null,
 					},
 				});
 			case `${actionTypePrefix}_${REQUEST_SUCCESS_SUFFIX}`:
+				console.log('reducer', action.data);
 				return update(state, {
 					$set: {
 						isFetching: false,
@@ -77,6 +85,7 @@ export const withAsyncReducer =
 				return update(state, {
 					$set: {
 						isFetching: false,
+						error: action.error,
 					},
 				});
 			default:

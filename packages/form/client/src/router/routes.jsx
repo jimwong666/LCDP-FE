@@ -8,7 +8,7 @@ const routes = [
 		key: '/template/add',
 		breadcrumb: ['表单', '新增模板'],
 		componentTemplate: LayoutBase,
-		child: React.lazy(() => import('@pages/home/add')),
+		child: React.lazy(() => import('@pages/template/add')),
 	},
 	{
 		path: '/template/list',

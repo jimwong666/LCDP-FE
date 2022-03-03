@@ -6,24 +6,41 @@ import { withRouter } from 'react-router-dom';
 import { Table, Input, Radio, Form, Space, Button, Row, Col, Select, DatePicker, Divider } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import styles from '../styles/index.scss';
-import { fetchTestAction, asyncCustomTestFetchAction } from '../actions';
+import { fetchTestAction, tempActionDispatchFormList, tempActionDispatchTableList } from '../actions';
 
 const { RangePicker } = DatePicker;
 const cx = classNames.bind(styles);
 
 const mapStateToProps = (state) => ({
-	customTestFetch: state.getIn(['homeReducer', 'customTestFetch']),
+	fetchFormList: state.getIn(['homeReducer', 'tempReducerFetchFormList']),
+	fetchTableList: state.getIn(['homeReducer', 'tempReducerFetchTableList']),
 });
 
 const mapDispatchToProps = (dispatch) => ({
 	...bindActionCreators(
 		{
 			fetchTest: fetchTestAction,
-			asyncCustomTestFetch: asyncCustomTestFetchAction,
+			dispatchFormList: tempActionDispatchFormList,
+			dispatchTableList: tempActionDispatchTableList,
 		},
 		dispatch,
 	),
 });
+
+// 映射
+const mapping = (pageType, props) => {
+	const { dispatchFormList, dispatchTableList, fetchFormList, fetchTableList } = props;
+	if (pageType === 'Table') {
+		return {
+			dispatch: dispatchTableList,
+			listData: fetchTableList,
+		};
+	}
+	return {
+		dispatch: dispatchFormList,
+		listData: fetchFormList,
+	};
+};
 
 const tableColumns = [
 	{
@@ -87,19 +104,6 @@ const tableColumns = [
 	},
 ];
 
-const data = [];
-for (let i = 1; i <= 100; i++) {
-	data.push({
-		key: i,
-		pageName: 'John Brown',
-		templateName: '模板',
-		path: 'a/b/c',
-		status: Math.floor(Math.random() * 3),
-		createTime: '20220102',
-		updateTime: '20220102',
-	});
-}
-
 @withRouter
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Index extends React.Component {
@@ -108,12 +112,13 @@ export default class Index extends React.Component {
 		this.state = {
 			listData: {},
 			loading: true,
+			pageType: 'Form',
 		};
 	}
 
 	componentDidMount() {
-		const { asyncCustomTestFetch } = this.props;
-		asyncCustomTestFetch({}, () => {
+		const { dispatchFormList } = this.props;
+		dispatchFormList({}, () => {
 			this.setState({
 				loading: false,
 			});
@@ -121,14 +126,12 @@ export default class Index extends React.Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		const { customTestFetch } = props;
-		console.log('customTestFetch', customTestFetch);
-		return customTestFetch?.isFetching || { listData: customTestFetch?.data };
+		const { pageType } = state;
+		return mapping(pageType, props).listData?.isFetching || { listData: mapping(pageType, props).listData?.data };
 	}
 
 	render() {
-		const { listData, loading } = this.state;
-		const { asyncCustomTestFetch } = this.props;
+		const { listData, loading, pageType } = this.state;
 
 		return (
 			<div className={cx('home-content')}>
@@ -173,9 +176,22 @@ export default class Index extends React.Component {
 							</Form.Item>
 						</Col>
 					</Row>
+
 					<Row>
 						<Col span={24} style={{ textAlign: 'right' }}>
-							<Button type="primary" htmlType="submit">
+							<Button
+								type="primary"
+								onClick={() => {
+									this.setState({
+										loading: true,
+									});
+									mapping(pageType, this.props).dispatch({}, () => {
+										this.setState({
+											loading: false,
+										});
+									});
+								}}
+							>
 								搜索
 							</Button>
 							<Button style={{ margin: '0 8px' }} onClick={() => {}}>
@@ -207,7 +223,8 @@ export default class Index extends React.Component {
 							this.setState({
 								loading: true,
 							});
-							asyncCustomTestFetch({ current, pageSize }, () => {
+
+							mapping(pageType, this.props).dispatch({ current, pageSize }, () => {
 								this.setState({
 									loading: false,
 								});
@@ -227,9 +244,21 @@ export default class Index extends React.Component {
 							}}
 						>
 							<Radio.Group
-								value="Form"
+								value={pageType}
 								onChange={(e) => {
-									console.log(e, 'change');
+									this.setState({
+										pageType: e.target.value,
+									});
+
+									this.setState({
+										loading: true,
+									});
+
+									mapping(e.target.value, this.props).dispatch({}, () => {
+										this.setState({
+											loading: false,
+										});
+									});
 								}}
 							>
 								<Radio.Button value="Form">
@@ -247,7 +276,7 @@ export default class Index extends React.Component {
 										marginLeft: '30px',
 									}}
 								>
-									<PlusOutlined /> 新增Form页面
+									<PlusOutlined /> 新增 {pageType} 页面
 								</Button>
 							</div>
 						</div>

@@ -4,12 +4,14 @@ import { combineReducers } from 'redux-immutable';
 import * as constant from './actionsTypes';
 
 // 自定义1
-const customTestFetchDefauleValue = {
-	status: false,
-	data: [],
-	txt: 0,
-};
-const testFetch = (state = customTestFetchDefauleValue, action) => {
+const testFetch = (
+	state = {
+		status: false,
+		data: [],
+		txt: 0,
+	},
+	action,
+) => {
 	switch (action.type) {
 		case constant.FETCH_TEST:
 			return update(state, {
@@ -23,12 +25,20 @@ const testFetch = (state = customTestFetchDefauleValue, action) => {
 	}
 };
 
-const customTestFetch = withAsyncReducer(constant.FETCH_CUSTOMER_TEMPLATES, {
+// formList
+const tempReducerFetchFormList = withAsyncReducer(constant.FETCH_FORM_LIST_TEMPLATES, {
+	isFetching: false,
+	data: null,
+});
+
+// tableList
+const tempReducerFetchTableList = withAsyncReducer(constant.FETCH_TABLE_LIST_TEMPLATES, {
 	isFetching: false,
 	data: null,
 });
 
 export default combineReducers({
-	customTestFetch,
+	tempReducerFetchFormList,
+	tempReducerFetchTableList,
 	testFetch,
 });

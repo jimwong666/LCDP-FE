@@ -26,7 +26,6 @@ const simpleAsync =
 			});
 			return request
 				.then((res) => {
-					console.log('action', res.data);
 					dispatch({
 						type: `${actionTypePrefix}_${REQUEST_SUCCESS_SUFFIX}`,
 						data: res.data,
@@ -74,7 +73,6 @@ export const withAsyncReducer =
 					},
 				});
 			case `${actionTypePrefix}_${REQUEST_SUCCESS_SUFFIX}`:
-				console.log('reducer', action.data);
 				return update(state, {
 					$set: {
 						isFetching: false,

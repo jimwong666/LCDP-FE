@@ -6,16 +6,32 @@ import { getCookieParams } from './cookie';
 const ajax = axios.create({
 	headers: {
 		'x-token': getCookieParams('xToken'),
-		xhr: true,
 	},
 });
 
-// 增加了响应数据的拦截，当请求响应登录超时的时候，给提醒
+// http request 拦截器
+axios.interceptors.request.use(
+	(config) => {
+		// const token = sessionStorage.getItem('token');
+		// if (token) {
+		// 	config.headers.authorization = token;
+		// }
+		return config;
+	},
+	(err) => {
+		return Promise.reject(err);
+	},
+);
+
+// http response 拦截器
 ajax.interceptors.response.use(
-	function (response) {
+	(response) => {
+		// if (!response?.data?.success) throw new Error(response?.data?.message);
+		// 全局处理响应情况
 		return response;
 	},
-	function (err) {
+	(err) => {
+		// 还可以判断其他的响应失败情况
 		return Promise.reject(err);
 	},
 );

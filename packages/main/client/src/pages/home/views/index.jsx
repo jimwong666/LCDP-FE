@@ -276,7 +276,7 @@ export default class Index extends React.Component {
 										marginLeft: '30px',
 									}}
 								>
-									<PlusOutlined /> 新增 {pageType} 页面
+									<PlusOutlined /> 新增{pageType}页面
 								</Button>
 							</div>
 						</div>

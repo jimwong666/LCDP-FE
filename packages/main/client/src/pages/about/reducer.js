@@ -1,5 +1,5 @@
 import update from 'immutability-helper';
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 import { withAsyncReducer } from '@utils/reduxSimpleAsync';
 import * as constant from './actionsTypes';
 

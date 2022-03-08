@@ -31,12 +31,13 @@ const schema = {
 };
 
 const Demo = () => {
+	const { refresh } = useTable();
+
 	const searchApi = (params, sorter) => {
-		console.log(params, sorter);
 		return axios
 			.get('https://www.fastmock.site/mock/62ab96ff94bc013592db1f67667e9c76/getTableList/api/basic', { params })
 			.then((res) => {
-				if (res && res.data) {
+				if (res.data && res.data.data) {
 					return {
 						rows: res.data.data,
 						total: res.data.data.length,
@@ -58,7 +59,7 @@ const Demo = () => {
 		return axios
 			.get('https://www.fastmock.site/mock/62ab96ff94bc013592db1f67667e9c76/getTableList/api/basic', { params })
 			.then((res) => {
-				if (res && res.data) {
+				if (res.data && res.data.data) {
 					return {
 						rows: res.data.data.slice(1),
 						total: res.data.data.length - 1,
@@ -150,6 +151,10 @@ const Demo = () => {
 		},
 	];
 
+	const showData = () => {
+		refresh(null, { extra: 1 });
+	};
+
 	return (
 		<div style={{ background: 'rgb(245,245,245)' }}>
 			<Search
@@ -167,10 +172,16 @@ const Demo = () => {
 				]}
 			/>
 			<Table
-				pagination={{ pageSize: 10 }}
+				pagination={{ pageSize: 4 }}
 				columns={columns}
 				rowKey="id"
 				toolbarRender={() => [
+					<Button key="show" onClick={showData}>
+						查看日志
+					</Button>,
+					<Button key="out" onClick={showData}>
+						导出数据
+					</Button>,
 					<Button key="primary" type="primary" onClick={() => alert('table-render！')}>
 						<PlusOutlined />
 						创建

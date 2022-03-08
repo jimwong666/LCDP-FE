@@ -28,8 +28,8 @@ const Demo = () => {
 			>
 				<Row gutter={24}>
 					<Col span={6}>
-						<Form.Item name="pageName" label="页面名称" rules={[{ required: true, message: '请填写页面名称！' }]}>
-							<Input allowClear placeholder="请填写页面名称" />
+						<Form.Item name="pageName" label="模板名称" rules={[{ required: true, message: '请填写模板名称！' }]}>
+							<Input allowClear placeholder="请填写模板名称" />
 						</Form.Item>
 					</Col>
 				</Row>

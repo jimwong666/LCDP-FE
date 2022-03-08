@@ -60,4 +60,8 @@ export async function unmount(props) {
 export async function update(props) {
 	console.log('table app 更新');
 	console.log('update props', props);
+	render(
+		RootRouter,
+		props.container ? props.container.querySelector(`#root_${APP_NAME}`) : document.getElementById(`root_${APP_NAME}`),
+	);
 }

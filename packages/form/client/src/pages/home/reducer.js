@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 import update from 'immutability-helper';
 import * as constant from './actionsTypes';
 

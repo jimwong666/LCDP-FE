@@ -1,6 +1,6 @@
 import update from 'immutability-helper';
 import { withAsyncReducer } from '@utils/reduxSimpleAsync';
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 import * as constant from './actionsTypes';
 
 // 自定义1

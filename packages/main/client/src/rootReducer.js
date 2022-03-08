@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 
 import { reducer as homeReducer } from '@pages/home';
 import { reducer as aboutReducer } from '@pages/about';

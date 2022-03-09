@@ -12,8 +12,8 @@ const { RangePicker } = DatePicker;
 const cx = classNames.bind(styles);
 
 const mapStateToProps = (state) => ({
-	fetchFormList: state.getIn(['homeReducer', 'tempReducerFetchFormList']),
-	fetchTableList: state.getIn(['homeReducer', 'tempReducerFetchTableList']),
+	fetchFormList: state.homeReducer.tempReducerFetchFormList,
+	fetchTableList: state.homeReducer.tempReducerFetchTableList,
 });
 
 const mapDispatchToProps = (dispatch) => ({

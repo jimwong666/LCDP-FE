@@ -9,7 +9,7 @@ import { withRouter } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const mapStateToProps = (state) => ({
-	customTestFetch: state.getIn(['homeReducer', 'customTestFetch']),
+	customTestFetch: state.homeReducer.customTestFetch,
 });
 
 const mapDispatchToProps = (dispatch) => ({

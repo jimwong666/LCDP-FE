@@ -35,28 +35,30 @@ html {
 				flex: 1 1 auto;
 				padding: 20px;
 				margin-left: 16px;
-				overflow-x: hidden;
-				overflow-y: auto;
+				//overflow-x: hidden;
+				//overflow-y: auto;
 				background: #fff;
-
-				&::-webkit-scrollbar-thumb {
-					background-color: transparent;
-					border-radius: 5px;
-				}
-
-				&:hover::-webkit-scrollbar-thumb {
-					background-color: #aaa;
-				}
-
-				&::-webkit-scrollbar {
-					width: 9px;
-					height: 16px;
-				}
-
-				&::-webkit-scrollbar-track {
-					background-color: transparent;
-				}
 			}
+		}
+	}
+
+	* {
+		&::-webkit-scrollbar-thumb {
+			background-color: transparent;
+			border-radius: 5px;
+		}
+
+		&:hover::-webkit-scrollbar-thumb {
+			background-color: #aaa;
+		}
+
+		&::-webkit-scrollbar {
+			width: 9px;
+			height: 16px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
 		}
 	}
 }

@@ -1,25 +1,49 @@
-.home-content {
-  display: flex;
-  flex-direction: row;
-  //&:before {
-  //	content: "";
-  //	position: absolute;
-  //	top: 54px;
-  //	left: 0;
-  //	right: 0;
-  //	height: 24px;
-  //	background-image: linear-gradient(#fff, transparent);
-  //	z-index: 99;
-  //}
-}
-
-.info-list {
-  flex: 1 1 auto;
-  width: 0;
-  margin-right: 60px;
-}
-
-.info-cards {
-  flex: 0 1 auto;
-  width: 300px;
+.table-template{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	.template-header {
+		flex: 0 0 72px;
+		padding: 20px 20px 0;
+		background: #fff;
+	}
+	.template-content {
+		flex: 1 1 auto;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		.content-header {
+			flex: 0 0 50px;
+			border: 1px solid #ccc;
+			border-bottom: none;
+			padding: 8px 10px 0;
+			background: #fff;
+		}
+		.content-main {
+			flex: 1 1 auto;
+			overflow: hidden;
+			display: flex;
+			background: #f9f9f9;
+			.main-controller {
+				flex: 1 1 40%;
+				padding: 20px;
+				overflow-y: auto;
+				border-left: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+			.main-show {
+				flex: 1 1 60%;
+				padding: 20px;
+				overflow-y: auto;
+				border: 1px dashed #999;
+			}
+		}
+	}
+	.template-footer {
+		flex: 0 0 50px;
+		padding: 8px 10px;
+		background: #fff;
+		display: flex;
+		justify-content: flex-end;
+	}
 }

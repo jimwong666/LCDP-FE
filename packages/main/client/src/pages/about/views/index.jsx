@@ -7,8 +7,8 @@ import { asyncFetchPreDataAction, asyncFetchPreDataAction2 } from '../actions';
 // const cx = classNames.bind(styles);
 
 const mapStateToProps = (state) => ({
-	preData: state.getIn(['workReducer', 'preData']),
-	preData2: state.getIn(['workReducer', 'preData2']),
+	preData: state.workReducer.preData,
+	preData2: state.workReducer.preData2,
 });
 
 const mapDispatchToProps = (dispatch) => ({

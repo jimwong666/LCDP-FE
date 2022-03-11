@@ -12,6 +12,7 @@ const { rewrites } = require('./utils/devMultiPageTools');
 const port = appConfig.dev_clientPort || 3000;
 const publicPath = appConfig.dev_publicPath || '/';
 const devApiPath = appConfig.dev_apiPath || `http://localhost:${port}/`;
+const dependencyPackages = appConfig.dependencyPackages || [];
 
 module.exports = merge(webpackBaseConfig, {
 	output: {
@@ -71,7 +72,12 @@ module.exports = merge(webpackBaseConfig, {
 			},
 			{
 				test: /\.(less|css)$/,
-				include: [clientPathResolve('../../lcdp-rc'), /node_modules/],
+				include: [
+					...dependencyPackages.map(function (packages) {
+						return clientPathResolve('../../' + packages);
+					}),
+					/node_modules/,
+				],
 				use: [
 					{
 						loader: 'style-loader',
@@ -93,8 +99,12 @@ module.exports = merge(webpackBaseConfig, {
 				test: /\.(jpe?g|png|gif|svg)$/,
 				include: [
 					clientPathResolve('src'),
-					clientPathResolve('../node_modules/lcdp-rc'),
-					clientPathResolve('../../lcdp-rc'),
+					...dependencyPackages.map(function (packages) {
+						return clientPathResolve('../../' + packages);
+					}),
+					...dependencyPackages.map(function (packages) {
+						return clientPathResolve('../node_modules/' + packages);
+					}),
 				],
 				use: {
 					loader: 'file-loader',

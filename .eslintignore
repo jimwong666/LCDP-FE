@@ -1,19 +1,20 @@
 **/*.svg
 **/*.ejs
 **/*.html
-package.json
 .umi
 .umi-production
 .vscode
 
+## 资源
+package.json
 **/*.min.js
 **/node_modules/**/*
 **/dist/**/*
+
+# 文档
+**/docs/**/*
 **/log/**/*
-**/public/style/**/*
 
-docs/**/*
-
-# lcdp-rc
-**/lcdp-rc/lib/**/*
-**/lcdp-rc/es/**/*
+# 库
+**/lib/**/*
+**/es/**/*

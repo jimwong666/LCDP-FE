@@ -12,7 +12,7 @@
     "stylelint": "npx stylelint --fix \"**/*.{css,scss,less}\"",
     "dumi:dev": "node generateDocs && dumi dev",
     "dumi:build": "node generateDocs && dumi build",
-    "build:lcdp-rc": "lerna run build --scope=eps-rc",
+    "build:dependencies": "lerna run build --scope=lcdp-rc",
     "publish": "lerna publish",
     "commit": "git-cz",
 		"genlog": "conventional-changelog -p angular -i CHANGELOG.md -s",

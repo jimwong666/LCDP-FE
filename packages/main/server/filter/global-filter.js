@@ -39,7 +39,7 @@ module.exports = {
 			query: req.query,
 			app: {
 				isDevMode,
-				staticPath: isDevMode ? conf.cdn : '/',
+				staticPath: conf.cdn || '/',
 				version: conf.version,
 			},
 			loginErrInfo: {

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Table, Search, withTable, useTable } from 'table-render';
 import { Tag, Space, message, Tooltip, Button, Form, Row, Col, Input, Divider, Select, Switch } from 'antd';
-import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
+import { PlusOutlined, MinusOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import ShowTable from '@components/business/showTable';
 import classNames from 'classnames/bind';
 import styles from '../styles/index.scss';
@@ -49,7 +49,7 @@ const Demo = () => {
 							}}
 						>
 							<Col span={5}>
-								<span>*</span>字段显示名
+								<i className="asterisk">*</i>字段显示名
 							</Col>
 							<Col span={5}>字段name</Col>
 							<Col span={5}>字段类型</Col>
@@ -126,12 +126,17 @@ const Demo = () => {
 								marginBottom: '10px',
 							}}
 						>
-							<Col span={4}>字段显示名</Col>
-							<Col span={4}>字段name</Col>
-							<Col span={4}>字段类型</Col>
-							<Col span={3}>列宽度</Col>
-							<Col span={4}>是否超出省略</Col>
-							<Col span={3}>是否排序</Col>
+							<Col span={6}>字段显示名</Col>
+							<Col span={6}>字段name</Col>
+							<Col span={6}>字段类型</Col>
+							<Col span={4}>
+								列宽度
+								<Tooltip placement="top" title="全部不填，平均分配">
+									<InfoCircleOutlined style={{ marginLeft: 6 }} />
+								</Tooltip>
+							</Col>
+							{/*<Col span={4}>是否超出省略</Col>*/}
+							{/*<Col span={3}>是否排序</Col>*/}
 							<Col span={2}>操作</Col>
 						</Row>
 
@@ -143,43 +148,43 @@ const Demo = () => {
 											{fields.map((field, index) => (
 												<div key={field.key} className={index % 2 === 1 ? 'list-odd' : 'list-even'}>
 													<Row gutter={10}>
-														<Col span={4}>
+														<Col span={6}>
 															<Input />
 														</Col>
-														<Col span={4}>
+														<Col span={6}>
 															<Input />
 														</Col>
-														<Col span={4}>
+														<Col span={6}>
 															<Select allowClear placeholder="请选择" style={{ width: '100%' }}>
 																<Select.Option value="1">String</Select.Option>
 																<Select.Option value="0">Array</Select.Option>
 															</Select>
 														</Col>
-														<Col span={3}>
+														<Col span={4}>
 															<Input />
 														</Col>
-														<Col
-															span={4}
-															style={{
-																textAlign: 'center',
-																display: 'flex',
-																alignItems: 'center',
-																justifyContent: 'center',
-															}}
-														>
-															<Switch checkedChildren="是" unCheckedChildren="否" defaultChecked />
-														</Col>
-														<Col
-															span={3}
-															style={{
-																textAlign: 'center',
-																display: 'flex',
-																alignItems: 'center',
-																justifyContent: 'center',
-															}}
-														>
-															<Switch checkedChildren="是" unCheckedChildren="否" defaultChecked />
-														</Col>
+														{/*<Col*/}
+														{/*	span={4}*/}
+														{/*	style={{*/}
+														{/*		textAlign: 'center',*/}
+														{/*		display: 'flex',*/}
+														{/*		alignItems: 'center',*/}
+														{/*		justifyContent: 'center',*/}
+														{/*	}}*/}
+														{/*>*/}
+														{/*	<Switch checkedChildren="是" unCheckedChildren="否" defaultChecked />*/}
+														{/*</Col>*/}
+														{/*<Col*/}
+														{/*	span={3}*/}
+														{/*	style={{*/}
+														{/*		textAlign: 'center',*/}
+														{/*		display: 'flex',*/}
+														{/*		alignItems: 'center',*/}
+														{/*		justifyContent: 'center',*/}
+														{/*	}}*/}
+														{/*>*/}
+														{/*	<Switch checkedChildren="是" unCheckedChildren="否" defaultChecked />*/}
+														{/*</Col>*/}
 														<Col
 															span={2}
 															style={{

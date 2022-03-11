@@ -1,1 +1,10 @@
-//这里放公共的样式
+//base
+@import './core/base';
+@import "./core/reset";
+@import "./core/atom";
+@import "./fonts";
+
+//common
+.asterisk {
+	color: red;
+}

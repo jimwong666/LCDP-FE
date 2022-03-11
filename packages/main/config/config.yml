@@ -36,5 +36,8 @@ backendUrl: "https://focusapi.vemic.com/mock/209"
 # 微应用
 microApps: ['form', 'table']
 
+# 依赖的包
+dependencyPackages: ['lcdp-rc']
+
 # cdn 地址
 cdn: ""

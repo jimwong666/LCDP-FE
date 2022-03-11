@@ -37,3 +37,6 @@ backendUrl: "https://focusapi.vemic.com/mock/209"
 
 # cdn 地址
 cdn: ""
+
+# 依赖的包
+dependencyPackages: ['lcdp-rc']

@@ -1,7 +1,8 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { clientPathResolve, getEntry } = require('./utils/tools');
+const { clientPathResolve, getEntry, appConfig } = require('./utils/tools');
 
 const entryObj = getEntry(clientPathResolve('src/entry'));
+const dependencyPackages = appConfig.dependencyPackages || [];
 
 module.exports = {
 	entry: entryObj,
@@ -9,7 +10,12 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				include: [clientPathResolve('src'), clientPathResolve('../../lcdp-rc')],
+				include: [
+					clientPathResolve('src'),
+					...dependencyPackages.map(function (packages) {
+						return clientPathResolve('../../' + packages);
+					}),
+				],
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader', // 主要用于编译es6语法和react的jsx语法

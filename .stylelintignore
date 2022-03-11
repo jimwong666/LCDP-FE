@@ -13,9 +13,9 @@ package.json
 
 docs/**/*
 
-# lcdp-rc
-**/lcdp-rc/lib/**/*
-**/lcdp-rc/es/**/*
+# 库
+**/lib/**/*
+**/es/**/*
 
 # compiled files
 **/public/style

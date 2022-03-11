@@ -56,7 +56,7 @@ module.exports = merge(webpackBaseConfig, {
 							modules: {
 								localIdentName: `${appConfig.appName}__[local]--[hash:base64:5]`,
 							},
-							importLoaders: 2, // 使用import之前还要经过几次loader
+							importLoaders: 3, // 使用import之前还要经过几次loader
 							sourceMap: true,
 						},
 					},
@@ -73,6 +73,13 @@ module.exports = merge(webpackBaseConfig, {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
+						},
+					},
+					{
+						loader: 'sass-resources-loader',
+						options: {
+							sourceMap: true,
+							resources: [clientPathResolve('src/styles/common.scss')],
 						},
 					},
 				],

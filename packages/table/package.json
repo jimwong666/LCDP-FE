@@ -68,6 +68,7 @@
 		"postcss-preset-env": "^7.3.3",
 		"react-refresh": "^0.11.0",
 		"sass-loader": "^12.6.0",
+		"sass-resources-loader": "^2.2.4",
 		"style-loader": "^3.3.1",
 		"uglifyjs-webpack-plugin": "^2.2.0",
 		"url-loader": "^4.1.1",

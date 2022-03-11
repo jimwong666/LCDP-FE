@@ -1,10 +1,14 @@
-//base
-@import './core/base';
-@import "./core/reset";
-@import "./core/atom";
-@import "./fonts";
+// TODO: 全局
+// TODO: 变量
+// TODO: 混入
+// 是否可以在引入的公共依赖包中解决？
 
-//common
-.asterisk {
+
+
+//:global(.asterisk){
+//	color: red;
+//}
+
+.asterisk{
 	color: red;
 }

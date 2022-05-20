@@ -18,6 +18,13 @@
 			border-bottom: none;
 			padding: 8px 10px 0;
 			background: #fff;
+			display: flex;
+			.content-header-left {
+				flex: 1 1 40%;
+			}
+			.content-header-right {
+				flex: 1 1 60%;
+			}
 		}
 		.content-main {
 			flex: 1 1 auto;
@@ -41,9 +48,9 @@
 	}
 	.template-footer {
 		flex: 0 0 50px;
-		padding: 8px 10px;
+		padding: 20px 10px;
 		background: #fff;
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
 	}
 }
